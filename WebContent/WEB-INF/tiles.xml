@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	<definition name="1" template="/tiles/layout1.jsp">
+		<put-attribute name="title"  value="ShoppingMall" />
+		<put-attribute name="header"   value="/tiles/header1.jsp" />
+		<put-attribute name="menu"  value="/tiles/menu1.jsp" />
+		<put-attribute name="body"  value="/tiles/body1.jsp" />
+		<put-attribute name="footer"  value="/tiles/footer1.jsp" />
+	</definition>
+	
+	<definition name="2" template="/tiles/layout2.jsp">
+		<put-attribute name="title"  value="ShoppingMall" />
+		<put-attribute name="header"   value="/tiles/header1.jsp" />
+		<put-attribute name="body"  value="/tiles/body2.jsp" />
+		<put-attribute name="footer"  value="/tiles/footer1.jsp" />
+	</definition>
+	
+	<!-- wild Card Tiles 2.1버전부터 설정파일에서 와일드카드를 사용하여 설정파일의 내용을 
+	줄이는 방법이 지원된다 -->
+    
+   	<definition name="user_*" extends="1">
+ 		<put-attribute name="body"  value="/tiles/body{1}.html" />
+	</definition>
+    	
+    <definition name="wr_*" extends="2"> 
+		<put-attribute name="body"  value="/tiles/body{1}.jsp" />
+	</definition>
+	
+</tiles-definitions>
