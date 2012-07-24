@@ -10,7 +10,6 @@
 	<ul>
 	<li><a href="main.do">타일즈</a></li>
 	<li><a href="/ShoppingMall/sitehelper/temp.jsp">관리자 페이지</a></li>
-	<li><a href="/ShoppingMall/sitehelper/temp2.jsp">임시 관리자 페이지</a></li>
 	</ul>
 </body>
 </html>

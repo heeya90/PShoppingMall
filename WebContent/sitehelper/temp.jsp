@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="sitehelper/admchk.do" method="post">
-	ID : <input type="text" id="id" /> <br />
-	PW : <input type="password" id="pw" /> <br />
+	<form action="admchk.do" method="post">
+	ID : <input type="text" name="id" /> <br />
+	PW : <input type="password" name="pw" /> <br />
 	<input type="submit" /> <!-- class="admchk.do" --> 
 	</form>
 </body>

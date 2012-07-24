@@ -11,6 +11,7 @@ public class AdmChk implements CommandHandler {
 		//1.명령어와 관련된 비즈니스 로직 처리
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
+		System.out.println(id+" , "+pw);
 		AdminDao adminDao = new AdminDao();
 		/*---------------------------*/
 		Admin adm = adminDao.selectAdmin();

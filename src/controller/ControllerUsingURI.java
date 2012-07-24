@@ -2,6 +2,7 @@ package controller;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
@@ -19,7 +20,7 @@ import command.NullHandler;
 public class ControllerUsingURI extends HttpServlet {
 
 	// 매핑 정보 저장하고 있는 설정 파일의 경로를 구한다.
-	private Map commandHandlerMap = new java.util.HashMap();
+	private Map commandHandlerMap = new HashMap();
 
 	public void init(ServletConfig config) throws ServletException {
 		String configFile = config.getInitParameter("configFile");
@@ -72,12 +73,16 @@ public class ControllerUsingURI extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// 클라이언트가 요청한 기능을 구한다.cmd파라미터 사용
 		String command = request.getRequestURI();
+		System.out.println("command:"+command);
 		// 요청을 처리할때 사용될 명령어 핸들러 인스턴스를 commandHandlerMap으로부터 구한다.
 		if (command.indexOf(request.getContextPath()) == 0) {
 			command = command.substring(request.getContextPath().length());
 		}
 		CommandHandler handler = (CommandHandler) commandHandlerMap
 				.get(command);
+		System.out.println("request.getContextPath():"+request.getContextPath());
+		System.out.println("command:"+command);
+		System.out.println("handler:"+handler);
 		// 명령어에 해당하는 핸들러 인스턴스가 존재하지 않을 경우 NullHandler를 사용한다.
 		if (handler == null) {
 			handler = new NullHandler();
@@ -91,6 +96,7 @@ public class ControllerUsingURI extends HttpServlet {
 		} catch (Throwable e) {
 			throw new ServletException(e);
 		}
+		
 		//핸들러 인스턴스가 리턴한 뷰 페이지로 이동한다.
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
