@@ -2,10 +2,11 @@ package command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.database.beans.Admin;
 import model.database.dao.AdminDao;
-import model.database.dto.Admin;
 
 public class AdmChk implements CommandHandler {
+
 	public String process(HttpServletRequest request,
 			HttpServletResponse response) throws Throwable {
 		//1.명령어와 관련된 비즈니스 로직 처리
@@ -13,7 +14,7 @@ public class AdmChk implements CommandHandler {
 		String pw = request.getParameter("pw");
 		System.out.println(id+" , "+pw);
 		AdminDao adminDao = new AdminDao();
-		/*---------------------------*/
+		
 		Admin adm = adminDao.selectAdmin();
 		String mssg=null;
 		
@@ -32,6 +33,6 @@ public class AdmChk implements CommandHandler {
 		//2.뷰 페이지에서 사용할 정보 저장
 		request.setAttribute("1", mssg);
 		//3.뷰 페이지의 URI 리턴
-		return "/1.tiles";
+		return "/havemenu.tiles";
 	}
 }

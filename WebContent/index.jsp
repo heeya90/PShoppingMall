@@ -9,7 +9,7 @@
 <body>
 	<ul>
 	<li><a href="main.do">타일즈</a></li>
-	<li><a href="/ShoppingMall/sitehelper/temp.jsp">관리자 페이지</a></li>
+	<li><a href="/ShoppingMall/sitehelper/sitehelper_login.jsp">관리자 페이지</a></li>
 	</ul>
 </body>
 </html>

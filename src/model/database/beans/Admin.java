@@ -1,4 +1,4 @@
-package model.database.dto;
+package model.database.beans;
 
 public class Admin {
 	private int no;

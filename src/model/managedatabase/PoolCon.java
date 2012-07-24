@@ -13,7 +13,7 @@ public class PoolCon {
 		ds.setUrl("jdbc:oracle:thin:@oracle.risingsun7.cafe24.com:1521:orcl");
 		ds.setUsername("risingsun7");
 		ds.setPassword("oracle9789");
-		ds.setInitialSize(10);
+		ds.setInitialSize(2);
 	}
 	
 	public Connection getCon(){
@@ -22,7 +22,7 @@ public class PoolCon {
 			System.out.println(con.toString());//
 		}catch(Exception e){
 			e.printStackTrace();
-			System.out.println("커넥션 연결 에러:" + e.getMessage());//
+			System.out.println("PoolCon Class - 커넥션 연결 에러:" + e.getMessage());//
 		}		
 		return con;
 	}

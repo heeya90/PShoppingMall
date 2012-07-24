@@ -4,7 +4,7 @@
        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 
 <tiles-definitions>
-	<definition name="1" template="/tiles/layout1.jsp">
+	<definition name="havemenu" template="/tiles/layout1.jsp">
 		<put-attribute name="title"  value="ShoppingMall" />
 		<put-attribute name="header"   value="/tiles/header1.jsp" />
 		<put-attribute name="menu"  value="/tiles/menu1.jsp" />
@@ -12,7 +12,7 @@
 		<put-attribute name="footer"  value="/tiles/footer1.jsp" />
 	</definition>
 	
-	<definition name="2" template="/tiles/layout2.jsp">
+	<definition name="nomenu" template="/tiles/layout2.jsp">
 		<put-attribute name="title"  value="ShoppingMall" />
 		<put-attribute name="header"   value="/tiles/header1.jsp" />
 		<put-attribute name="body"  value="/tiles/body2.jsp" />
@@ -21,13 +21,13 @@
 	
 	<!-- wild Card Tiles 2.1버전부터 설정파일에서 와일드카드를 사용하여 설정파일의 내용을 
 	줄이는 방법이 지원된다 -->
-    
-   	<definition name="user_*" extends="1">
+    <!-- 
+   	<definition name="user_*" extends="havemenu">
  		<put-attribute name="body"  value="/tiles/body{1}.html" />
 	</definition>
     	
-    <definition name="wr_*" extends="2"> 
+    <definition name="wr_*" extends="nomenu"> 
 		<put-attribute name="body"  value="/tiles/body{1}.jsp" />
 	</definition>
-	
+	 -->
 </tiles-definitions>

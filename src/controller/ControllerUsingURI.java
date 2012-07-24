@@ -78,8 +78,17 @@ public class ControllerUsingURI extends HttpServlet {
 		if (command.indexOf(request.getContextPath()) == 0) {
 			command = command.substring(request.getContextPath().length());
 		}
-		CommandHandler handler = (CommandHandler) commandHandlerMap
-				.get(command);
+		//		Map(key, value)
+		//commandHandlerMap -> /main.do=command.MainHandler
+		//						Map(/sitehelper/admchk.do, command.AdmChk)
+		CommandHandler handler = (CommandHandler)commandHandlerMap
+													.get(command);
+		//		/ShoppingMall/sitehelper/admchk.do
+		//		-> /sitehelper/admchk.do
+		//		/sitehelper/admchk.do=command.AdmChk
+		
+		//sitehelper/admchk.do
+		//
 		System.out.println("request.getContextPath():"+request.getContextPath());
 		System.out.println("command:"+command);
 		System.out.println("handler:"+handler);

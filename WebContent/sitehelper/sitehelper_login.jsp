@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>ADMIN LOGIN PAGE</title>
 </head>
 <body>
+	<h2 align="center" >관리자 로그인</h2>
+	
 	<form action="admchk.do" method="post">
 	ID : <input type="text" name="id" /> <br />
 	PW : <input type="password" name="pw" /> <br />

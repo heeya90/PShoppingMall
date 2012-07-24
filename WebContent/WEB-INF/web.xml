@@ -3,15 +3,21 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
-	<display-name>JSP_tiles2</display-name>
+	<display-name>PShoppingMall</display-name>
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>DBConnectionPoolInit</servlet-name>
+		<servlet-class>model.managedatabase.DBCPInit</servlet-class>
+		<init-param>
+			<param-name>jdbcdriver</param-name>
+			<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
 	<servlet>
 		<servlet-name>ControllerUsingURI</servlet-name>
 		<servlet-class>controller.ControllerUsingURI</servlet-class>
@@ -26,6 +32,7 @@
 		<servlet-name>ControllerUsingURI</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
+	
 	<servlet>
 		<servlet-name>TilesDispatchServlet</servlet-name>
 		<servlet-class>org.apache.tiles.web.util.TilesDispatchServlet</servlet-class>
