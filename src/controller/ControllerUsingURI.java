@@ -2,7 +2,6 @@ package controller;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.URL;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;

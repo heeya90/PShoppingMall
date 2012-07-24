@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<ul>
-	<li><a href="main.do">타일즈</a></li>
-	<li><a href="/ShoppingMall/sitehelper/temp.jsp">관리자 페이지</a></li>
-	<li><a href="/ShoppingMall/sitehelper/temp2.jsp">임시 관리자 페이지</a></li>
-	</ul>
+	<form action="/ShoppingMall/sitehelper/temp3.jsp" method="post">
+	ID : <input type="text" id="id" /> <br />
+	PW : <input type="password" id="pw" /> <br />
+	<input type="submit" /> <!-- class="admchk.do" --> 
+	</form>
 </body>
 </html>
