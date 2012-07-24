@@ -107,6 +107,7 @@ public class ControllerUsingURI extends HttpServlet {
 		}
 		
 		//핸들러 인스턴스가 리턴한 뷰 페이지로 이동한다.
+		System.out.println(viewPage);
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
 	}
